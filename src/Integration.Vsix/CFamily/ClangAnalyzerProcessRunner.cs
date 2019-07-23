@@ -122,7 +122,7 @@ namespace SonarLint.VisualStudio.Integration.Vsix.CFamily
         private string FindAnalyzerExe()
         {
             var extensionFolder = Path.GetDirectoryName(typeof(CFamilyHelper).Assembly.Location);
-            return Path.Combine(extensionFolder, "clang-0.0.4-win", "subprocess.exe");
+            return Path.Combine(extensionFolder, "CFamily", "subprocess.exe");
         }
 
         private void OnOutputDataReceived(object sender, DataReceivedEventArgs e)
