@@ -20,6 +20,7 @@
 
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Microsoft.VisualStudio.Imaging.Interop;
 using Microsoft.VisualStudio.Shell.Interop;
 using Microsoft.VisualStudio.Shell.TableControl;
 using Microsoft.VisualStudio.Shell.TableManager;
@@ -103,6 +104,10 @@ namespace SonarLint.VisualStudio.Integration.Vsix
                     content = ErrorRank.Other;
                     return true;
 
+                case StandardTableKeyNames.ErrorSource:
+                    content = ErrorSource.Other;
+                    return true;
+
                 case StandardTableKeyNames.ErrorCategory:
                     content = $"{issueMarkers[index].Issue.Severity} {ToString(issueMarkers[index].Issue.Type)}";
                     return true;
@@ -118,6 +123,10 @@ namespace SonarLint.VisualStudio.Integration.Vsix
 
                 case StandardTableKeyNames.ProjectName:
                     content = projectName;
+                    return true;
+
+                case StandardTableKeyNames.ErrorSeverityImage:
+                    content = ImagesMonikers.Major;
                     return true;
                 default:
                     content = null;
