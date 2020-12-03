@@ -222,9 +222,9 @@
           Background="{DynamicResource {x:Static vsTheming:TreeViewColors.BackgroundBrushKey}}"     
           >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MinWidth="300"/>
+            <ColumnDefinition Width="7*" MinWidth="300"/>
             <ColumnDefinition Width="5" />
-            <ColumnDefinition Width="*" MinWidth="200" />
+            <ColumnDefinition Width="3*" MinWidth="200" />
         </Grid.ColumnDefinitions>
         <DataGrid Grid.Column="0" 
                   IsReadOnly="True" 
@@ -283,7 +283,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Hotspot.Issue.Rule.Priority" Header="Priority" Width="100"  MinWidth="50">
+                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Hotspot.Issue.Rule.Priority" Header="Priority" Width="90"  MinWidth="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Hotspot.Issue.Rule.Priority}" 
@@ -299,7 +299,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="DisplayPath" Header="File" Width="200"  MinWidth="80">
+                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="DisplayPath" Header="File" Width="180"  MinWidth="80">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding DisplayPath}" 
@@ -307,7 +307,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Line" Header="Line" Width="50"  MinWidth="25">
+                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Line" Header="Line" Width="40"  MinWidth="25">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Line}" 
@@ -315,7 +315,7 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Column" Header="Col" Width="50"  MinWidth="25">
+                <DataGridTemplateColumn CanUserSort="True" SortMemberPath="Column" Header="Col" Width="40"  MinWidth="25">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Column}" 
@@ -346,10 +346,15 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" 
+
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+                        <TextBlock Grid.Column="0" 
                                TextWrapping="Wrap"
                                TextAlignment="Left"
                                Text="{Binding Path=SelectedHotspot.Hotspot.Issue.Rule.VulnerabilityDescription}" />
+
+                    </ScrollViewer>
+                    
                 </Grid>
 
             </TabItem>
@@ -358,10 +363,13 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" 
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" >
+
+                        <TextBlock Grid.Column="0" 
                                TextWrapping="Wrap"
                                TextAlignment="Left"
                                Text="{Binding Path=SelectedHotspot.Hotspot.Issue.Rule.FixRecommendations}" />
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
         </TabControl>
