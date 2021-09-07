@@ -23,7 +23,7 @@ using System.IO;
 using System.IO.Abstractions;
 using System.Threading;
 using FluentAssertions;
-using Microsoft.VisualStudio.CodeAnalysis.RuleSets;
+using SonarLint.VisualStudio.Core.CSharpVB;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using SonarLint.VisualStudio.Core.Binding;

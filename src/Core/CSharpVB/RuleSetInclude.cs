@@ -18,25 +18,18 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-using SonarLint.VisualStudio.Core.CSharpVB;
-
-namespace SonarLint.VisualStudio.Integration
+namespace SonarLint.VisualStudio.Core.CSharpVB
 {
-    /// <summary>
-    /// Abstraction for reading and writing of <see cref="RuleSet"/> instances.
-    /// </summary>
-    internal interface IRuleSetSerializer : ILocalService
+    public class RuleSetInclude
     {
-        /// <summary>
-        /// Will write the specified <paramref name="ruleSet"/> into specified path.
-        /// The caller needs to handler the various possible errors.
-        /// </summary>
-        void WriteRuleSetFile(RuleSet ruleSet, string path);
+        public RuleSetInclude(string expectedIncludePath, object @default)
+        {
+            ExpectedIncludePath = expectedIncludePath;
+            Default = @default;
+        }
 
-        /// <summary>
-        /// Will load a RuleSet in specified <paramref name="path"/>.
-        /// In case of error, null will be returned.
-        /// </summary>
-        RuleSet LoadRuleSet(string path);
+        public string FilePath { get; set; }
+        public string ExpectedIncludePath { get; }
+        public object Default { get; }
     }
 }

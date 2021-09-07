@@ -29,5 +29,6 @@ namespace SonarLint.VisualStudio.Core.CSharpVB
         Info,
         Warning,
         Error,
+        Default,
     }
 }

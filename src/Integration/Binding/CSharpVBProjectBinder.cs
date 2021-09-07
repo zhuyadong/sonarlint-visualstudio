@@ -24,7 +24,7 @@ using System.IO.Abstractions;
 using System.Linq;
 using System.Threading;
 using EnvDTE;
-using Microsoft.VisualStudio.CodeAnalysis.RuleSets;
+using SonarLint.VisualStudio.Core.CSharpVB;
 using SonarLint.VisualStudio.Core.Binding;
 using SonarLint.VisualStudio.Integration.Helpers;
 using Language = SonarLint.VisualStudio.Core.Language;

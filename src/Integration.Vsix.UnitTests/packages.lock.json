@@ -828,7 +828,7 @@
           "System.Xml.XPath": "4.0.1"
         }
       },
-      "SonarLint.2019": {
+      "SonarLint.2022": {
         "type": "Project",
         "dependencies": {
           "EnvDTE": "8.0.0",

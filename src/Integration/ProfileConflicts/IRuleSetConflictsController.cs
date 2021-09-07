@@ -39,4 +39,16 @@ namespace SonarLint.VisualStudio.Integration.ProfileConflicts
         /// </summary>
         void Clear();
     }
+
+    internal class DummyRuleSetConflictsController : IRuleSetConflictsController
+    {
+        public bool CheckForConflicts()
+        {
+            return false;
+        }
+
+        public void Clear()
+        {
+        }
+    }
 }

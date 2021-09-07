@@ -20,7 +20,7 @@
 
 using System;
 using System.Collections.Generic;
-using Microsoft.VisualStudio.CodeAnalysis.RuleSets;
+using SonarLint.VisualStudio.Core.CSharpVB;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SonarLint.VisualStudio.Integration.ProfileConflicts;
 

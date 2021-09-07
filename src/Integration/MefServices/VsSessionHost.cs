@@ -311,8 +311,8 @@ namespace SonarLint.VisualStudio.Integration
             this.localServices.Add(typeof(ITestProjectRegexSetter), projectNameTestProjectIndicator);
 
             this.localServices.Add(typeof(IProjectSystemHelper), new Lazy<ILocalService>(() => new ProjectSystemHelper(this, projectToLanguageMapper)));
-            this.localServices.Add(typeof(IRuleSetInspector), new Lazy<ILocalService>(() => new RuleSetInspector(this, Logger)));
-            this.localServices.Add(typeof(IRuleSetConflictsController), new Lazy<ILocalService>(() => new RuleSetConflictsController(this, new ConflictsManager(this, Logger))));
+            this.localServices.Add(typeof(IRuleSetInspector), new Lazy<ILocalService>(() => new DummyRuleSetInspector()));
+            this.localServices.Add(typeof(IRuleSetConflictsController), new Lazy<ILocalService>(() => new DummyRuleSetConflictsController()));
             this.localServices.Add(typeof(IProjectSystemFilter), new Lazy<ILocalService>(() =>
             {
                 var testProjectIndicators = new List<ITestProjectIndicator>

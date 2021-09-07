@@ -22,7 +22,7 @@ using System;
 using System.IO;
 using System.IO.Abstractions;
 using System.Xml;
-using Microsoft.VisualStudio.CodeAnalysis.RuleSets;
+using SonarLint.VisualStudio.Core.CSharpVB;
 using SonarLint.VisualStudio.Integration.Resources;
 
 namespace SonarLint.VisualStudio.Integration

@@ -22,7 +22,7 @@ using System;
 using System.IO;
 using System.Xml.Linq;
 using FluentAssertions;
-using Microsoft.VisualStudio.CodeAnalysis.RuleSets;
+using SonarLint.VisualStudio.Core.CSharpVB;
 
 namespace SonarLint.VisualStudio.Integration.UnitTests
 {

@@ -99,6 +99,11 @@ namespace SonarLint.VisualStudio.Core.Helpers
             return ToFilePathString(relativeUri);
         }
 
+        public static string ResolveRelativePath(object filePath, string ruleSetRoot)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Resolve a relative path against the given root path.
         /// </summary>

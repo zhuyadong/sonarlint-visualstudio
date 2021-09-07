@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="SonarLint.VisualStudio.Integration.TeamExplorer.ConnectSectionView"
+﻿<!--<UserControl x:Class="SonarLint.VisualStudio.Integration.TeamExplorer.ConnectSectionView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:componentmodel="clr-namespace:System.ComponentModel;assembly=PresentationFramework"
@@ -198,4 +198,5 @@
         </Grid>
 
     </Border>
-</UserControl>
+</UserControl>-->
+<wpf:Window xmlns:wpf="http://schemas.microsoft.com/netfx/2009/xaml/presentation"></wpf:Window>

@@ -18,6 +18,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
@@ -30,6 +31,15 @@ namespace SonarLint.VisualStudio.Core.CSharpVB
     // and the other data files in the same folder.
     public class RuleSet
     {
+        public RuleSet()
+        {
+
+        }
+        public RuleSet(string ruleSetName)
+        {
+            RuleSetName = ruleSetName;
+        }
+
         [XmlAttribute]
         public string Name { get; set; }
 
@@ -44,10 +54,28 @@ namespace SonarLint.VisualStudio.Core.CSharpVB
 
         [XmlElement]
         public List<Rules> Rules { get; set; } = new List<Rules>();
+        public string FilePath { get; set; }
+        public List<RuleSetInclude> RuleSetIncludes { get; set; }
+        public string RuleSetName { get; }
 
         public string ToXml()
         {
             return Serializer.ToString(this);
+        }
+
+        public void Validate()
+        {
+            throw new NotImplementedException();
+        }
+
+        public static RuleSet LoadFromFile(string baselineRuleSetPath)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteToFile(string path)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -89,5 +117,22 @@ namespace SonarLint.VisualStudio.Core.CSharpVB
 
         [XmlElement("Rule")]
         public List<Rule> RuleList { get; set; }
+    }
+
+    public class RuleReference
+    {
+        public string FullId { get; set; }
+    
+    }
+
+    public class RuleInfoProvider
+    {
+
+    }
+
+
+    public class InvalidRuleSetException : Exception
+    {
+
     }
 }

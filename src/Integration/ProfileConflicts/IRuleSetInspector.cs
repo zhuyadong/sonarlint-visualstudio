@@ -44,4 +44,17 @@ namespace SonarLint.VisualStudio.Integration.ProfileConflicts
         /// <param name="ruleSetDirectories">Optional rule set directories i.e. when the <paramref name="targetRuleSet"/> is not absolute</param>
         FixedRuleSetInfo FixConflictingRules(string baselineRuleSetPath, string targetRuleSetPath, params string[] ruleSetDirectories);
     }
+
+    public class DummyRuleSetInspector : IRuleSetInspector
+    {
+        public RuleConflictInfo FindConflictingRules(string baselineRuleSet, string targetRuleSet, params string[] ruleSetDirectories)
+        {
+            return null;
+        }
+
+        public FixedRuleSetInfo FixConflictingRules(string baselineRuleSetPath, string targetRuleSetPath, params string[] ruleSetDirectories)
+        {
+            return null;
+        }
+    }
 }
