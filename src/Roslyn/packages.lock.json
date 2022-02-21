@@ -17,6 +17,21 @@
         "resolved": "13.0.1",
         "contentHash": "ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A=="
       },
+      "BouncyCastle": {
+        "type": "Transitive",
+        "resolved": "1.8.6.1",
+        "contentHash": "rkqpuKmJkdcfTMBkIj1b5nMdBAWKwAyh+I/BQYeqqSD2jkIlhwc9qBNKmSbnpmmm5c29qHZGLpvBSTNWvDLtQA=="
+      },
+      "Google.Protobuf": {
+        "type": "Transitive",
+        "resolved": "3.6.1",
+        "contentHash": "741fGeDQjixBJaU2j+0CbrmZXsNJkTn/hWbOh4fLVXndHsCclJmWznCPWrJmPoZKvajBvAz3e8ECJOUvRtwjNQ=="
+      },
+      "Grpc.Tools": {
+        "type": "Transitive",
+        "resolved": "1.4.1",
+        "contentHash": "D5AcNr0yPFz5dqftJYKnMtwg6AEMUics+UysxTXKVuZtresqWUcHIrnscM+KsAIreG7wvdumWzjdIXRIMekCLg=="
+      },
       "Microsoft.CodeAnalysis.Analyzers": {
         "type": "Transitive",
         "resolved": "2.9.4",
@@ -46,6 +61,11 @@
         "resolved": "1.5.0",
         "contentHash": "EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ=="
       },
+      "System.IO.Abstractions": {
+        "type": "Transitive",
+        "resolved": "7.1.10",
+        "contentHash": "qseReDWlVNclqdze6nLnEqQxAyMS2mO5oCG4SIMgJHqTEPLNhGe9a+KReKHl6DFTarzueP4leQOhCXLxoKQL0g=="
+      },
       "System.Memory": {
         "type": "Transitive",
         "resolved": "4.5.3",
@@ -55,6 +75,11 @@
           "System.Numerics.Vectors": "4.4.0",
           "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         }
+      },
+      "System.Net.Http": {
+        "type": "Transitive",
+        "resolved": "4.0.0",
+        "contentHash": "mZuAl7jw/mFY8jUq4ITKECxVBh9a8SJt9BC/+lJbmo7cRKspxE3PsITz+KiaCEsexN5WYPzwBOx0oJH/0HlPyQ=="
       },
       "System.Numerics.Vectors": {
         "type": "Transitive",
@@ -88,6 +113,24 @@
         "contentHash": "+MvhNtcvIbqmhANyKu91jQnvIRVSTiaOiFNfKWwXGHG48YAb4I/TyH8spsySiPYla7gKal5ZnF3teJqZAximyQ==",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+        }
+      },
+      "SonarLint.VisualStudio.Core": {
+        "type": "Project",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "SonarQube.Client": "1.0.0",
+          "System.IO.Abstractions": "7.1.10"
+        }
+      },
+      "sonarqube.client": {
+        "type": "Project",
+        "dependencies": {
+          "BouncyCastle": "1.8.6.1",
+          "Google.Protobuf": "3.6.1",
+          "Grpc.Tools": "1.4.1",
+          "Newtonsoft.Json": "13.0.1",
+          "System.Net.Http": "4.0.0"
         }
       }
     }

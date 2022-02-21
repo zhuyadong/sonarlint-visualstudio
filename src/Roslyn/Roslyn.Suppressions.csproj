@@ -25,5 +25,10 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.0.0" PrivateAssets="all" />
 
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\sonarqube-webclient\SonarQube.Client\SonarQube.Client.csproj" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+  </ItemGroup>
   
 </Project>

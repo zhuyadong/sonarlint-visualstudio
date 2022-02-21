@@ -22,7 +22,7 @@ namespace SonarLint.VisualStudio.Roslyn.Suppressions
 
         public override void ReportSuppressions(SuppressionAnalysisContext context)
         {
-            this.Log($"In ReportSuppresions. ReportedDiagnostics: {context.ReportedDiagnostics.Length}");
+             this.Log($"In ReportSuppresions. ReportedDiagnostics: {context.ReportedDiagnostics.Length}");
             var timer = Stopwatch.StartNew();
 
             // With suppressions, this is the first point we get access to the code being compiled
@@ -38,7 +38,7 @@ namespace SonarLint.VisualStudio.Roslyn.Suppressions
 
             foreach (var diag in context.ReportedDiagnostics)
             {
-             //   if (Shared.SuppressionChecker.IsSuppressed(diag))
+                if (Shared.SuppressionChecker.IsSuppressed(diag))
                 {
                     // Find the appropriate suppression
                     var suppressionDesc = SupportedSuppressions.First(x => x.SuppressedDiagnosticId == diag.Id);

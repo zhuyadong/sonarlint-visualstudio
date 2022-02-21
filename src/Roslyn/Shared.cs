@@ -10,7 +10,7 @@ namespace SonarLint.VisualStudio.Roslyn.Suppressions
 
             System.Diagnostics.Debugger.Launch();
 
-            SuppressionChecker = new NoOpSuppressionChecker();
+            SuppressionChecker = new SuppressIfInFirstTenLines();
             Logger = new FileLogger(RootDirectory);
         }
 

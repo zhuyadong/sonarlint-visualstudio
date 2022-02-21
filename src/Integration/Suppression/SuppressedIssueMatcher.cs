@@ -73,7 +73,7 @@ namespace SonarLint.VisualStudio.Integration.Suppression
             }
 
             // Non-file level issue
-            return issue.StartLine == serverIssue.TextRange?.StartLine || StringComparer.Ordinal.Equals(issue.LineHash, serverIssue.Hash);
+           return issue.StartLine == serverIssue.TextRange?.StartLine || StringComparer.Ordinal.Equals(issue.LineHash, serverIssue.Hash);
         }
     }
 }

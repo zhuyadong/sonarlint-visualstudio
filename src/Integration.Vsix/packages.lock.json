@@ -1590,7 +1590,9 @@
       "SonarLint.VisualStudio.Roslyn.Suppressions": {
         "type": "Project",
         "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "SonarLint.VisualStudio.Core": "1.0.0",
+          "SonarQube.Client": "1.0.0"
         }
       },
       "SonarLint.VisualStudio.TypeScript": {
