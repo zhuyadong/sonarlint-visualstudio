@@ -63,18 +63,6 @@ namespace SonarLint.VisualStudio.Integration.Vsix.Delegates
             }
         }
 
-        private RoslynAnalysisSettings GetSettings()
-        {
-
-            var map = BuildProjectPathToIdMap(vsSolution);
-
-            foreach (var kvp in map)
-            {
-                var suppressions = sonarQubeIssuesProvider.GetSuppressedIssues(kvp.Key ,)
-            }
-
-        }
-
         internal /* for testing */ static IDictionary<string, string> BuildProjectPathToIdMap(IVsSolution solution)
         {
             var map = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -112,12 +100,6 @@ namespace SonarLint.VisualStudio.Integration.Vsix.Delegates
                 map[projectFile] = projectGuid.ToString().Replace("{", "").Replace("}", "");
             }
             return map;
-        }
-
-        private void UpdateRoslynAnalyzerSettings()
-        {
-            var issues = sonarQubeIssuesProvider.GetSuppressedIssues();
-
         }
 
     }
