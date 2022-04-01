@@ -78,4 +78,15 @@ namespace SonarLint.VisualStudio.Core.Analysis
         Bug,
         Vulnerability
     }
+
+    public static class TextRangeExtensions
+    {
+        public static bool IsFileLevel(this ITextRange textRange)
+        {
+            return textRange.StartLine == 0 &&
+                textRange.StartLineOffset == 0 &&
+                textRange.EndLine == 0 &&
+                textRange.EndLineOffset == 0;
+        }
+    }
 }

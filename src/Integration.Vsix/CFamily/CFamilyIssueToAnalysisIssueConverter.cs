@@ -187,7 +187,7 @@ namespace SonarLint.VisualStudio.Integration.Vsix.CFamily
             IReadOnlyList<IAnalysisIssueFlow> flows,
             IReadOnlyDictionary<string, ITextDocument> fileContents)
         {
-            return new AnalysisIssue
+            var hede = new AnalysisIssue
             (
                 ruleKey: sqLanguage + ":" + cFamilyIssue.RuleKey,
                 severity: Convert(defaultSeverity),
@@ -206,6 +206,7 @@ namespace SonarLint.VisualStudio.Integration.Vsix.CFamily
                 flows: flows,
                 fixes: ToQuickFixes(cFamilyIssue)
             );
+            return hede;
         }
 
         private static List<QuickFix> ToQuickFixes(Message cFamilyIssue)
@@ -226,10 +227,7 @@ namespace SonarLint.VisualStudio.Integration.Vsix.CFamily
 
         private string CalculateLineHash(MessagePart cFamilyIssueLocation, IReadOnlyDictionary<string, ITextDocument> fileContents)
         {
-            var isFileLevelLocation = cFamilyIssueLocation.Line == 1 &&
-                                      cFamilyIssueLocation.Column <= 1 &&
-                                      cFamilyIssueLocation.EndColumn == 0 &&
-                                      cFamilyIssueLocation.EndLine == 0;
+            bool isFileLevelLocation = IsLocationFileLevel(cFamilyIssueLocation);
 
             if (isFileLevelLocation)
             {
@@ -239,6 +237,14 @@ namespace SonarLint.VisualStudio.Integration.Vsix.CFamily
             var textSnapshot = fileContents[cFamilyIssueLocation.Filename]?.TextBuffer?.CurrentSnapshot;
 
             return textSnapshot == null ? null : lineHashCalculator.Calculate(textSnapshot, cFamilyIssueLocation.Line);
+        }
+
+        private static bool IsLocationFileLevel(MessagePart cFamilyIssueLocation)
+        {
+            return cFamilyIssueLocation.Line == 1 &&
+                                      cFamilyIssueLocation.Column <= 1 &&
+                                      cFamilyIssueLocation.EndColumn == 0 &&
+                                      cFamilyIssueLocation.EndLine == 0;
         }
 
         private AnalysisIssueLocation ToAnalysisIssueLocation(MessagePart cFamilyIssueLocation, IReadOnlyDictionary<string, ITextDocument> fileContents)

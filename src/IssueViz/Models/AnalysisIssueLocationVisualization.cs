@@ -124,7 +124,18 @@ namespace SonarLint.VisualStudio.IssueVisualization.Models
 
         public static bool IsNavigable(this SnapshotSpan? span)
         {
-            return !span.HasValue || !span.Value.IsEmpty;
+            return span.IsFileLevel() || !span.Value.IsEmpty;
+        }
+
+        public static bool IsFileLevel(this IAnalysisIssueLocationVisualization locationVisualization)
+        {
+            return locationVisualization.Span.IsFileLevel();
+
+        }
+
+        private static bool IsFileLevel(this SnapshotSpan? span)
+        {
+            return !span.HasValue;
         }
     }
 }
