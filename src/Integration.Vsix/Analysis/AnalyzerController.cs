@@ -83,6 +83,11 @@ namespace SonarLint.VisualStudio.Integration.Vsix.Analysis
             }
         }
 
+        public bool ShouldAnalyze(string filePath)
+        {
+            return analyzableFileIndicator.ShouldAnalyze(filePath);
+        }
+
         #endregion IAnalyzerController implementation
 
         #region IDisposable Support

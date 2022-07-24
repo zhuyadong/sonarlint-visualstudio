@@ -27,5 +27,6 @@ namespace SonarLint.VisualStudio.Integration.Vsix.Analysis
     // of this interface).
     internal interface IAnalyzerController : IAnalyzer
     {
+        bool ShouldAnalyze(string filePath);
     }
 }

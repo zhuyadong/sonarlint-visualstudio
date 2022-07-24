@@ -194,6 +194,7 @@ namespace SonarLint.VisualStudio.Integration.Vsix
         public void RequestAnalysis(string path, string charset, IEnumerable<AnalysisLanguage> detectedLanguages, IIssueConsumer issueConsumer, IAnalyzerOptions analyzerOptions)
         {
             // May be called on the UI thread -> unhandled exceptions will crash VS
+            if (!analyzerController.ShouldAnalyze(path)) { return; }
             try
             {
                 var analysisTimeout = GetAnalysisTimeoutInMilliseconds();
